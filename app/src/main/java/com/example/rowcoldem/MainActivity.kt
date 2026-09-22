@@ -1,4 +1,4 @@
-package com.example.rowcoldem
+package com.example.rowcoldemo
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,17 +11,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.rowcoldem.ui.theme.RowColDemTheme
+import com.example.rowcoldemo.ui.theme.RowColDemoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            RowColDemTheme {
-                Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+            RowColDemoTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    MainScreen(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -31,17 +30,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun MainScreen(modifier: Modifier = Modifier) {
+    Text("Hello Compose")
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    RowColDemTheme {
-        Greeting("Android")
+fun DefaultPreview() {
+    RowColDemoTheme {
+        MainScreen()
     }
 }
