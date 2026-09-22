@@ -20,6 +20,8 @@ import androidx.compose.ui.unit.sp
 import com.example.rowcoldem.ui.theme.RowColDemoTheme
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.layout.FirstBaseline
+import androidx.compose.ui.layout.LastBaseline
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +43,14 @@ class MainActivity : ComponentActivity() {
 fun MainScreen(modifier: Modifier = Modifier) {
     Row {
         Text(
-            text = "Large Text",
-            Modifier.alignByBaseline(),
+            text = "Large Text\n\nMore Text",
+            Modifier.alignBy(FirstBaseline),
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold
         )
         Text(
             text = "Small Text",
-            Modifier.alignByBaseline(),
+            Modifier.alignBy(LastBaseline),
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
         )
