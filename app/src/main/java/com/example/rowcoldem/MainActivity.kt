@@ -38,9 +38,23 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
     Column {
-        TextCell("1")
-        TextCell("2")
-        TextCell("3")
+        Row {
+            TextCell("1")
+            TextCell("2")
+            TextCell("3")
+        }
+
+        Row {
+            TextCell("4")
+            TextCell("5")
+            TextCell("6")
+        }
+
+        Row {
+            TextCell("7")
+            TextCell("8")
+            TextCell("9")
+        }
     }
 }
 
